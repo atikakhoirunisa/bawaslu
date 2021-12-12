@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'alamat' => 'Cemoroharjo, Candibinangun, Pakem',
             'email' => 'admin@mail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('12345678'), //ini password
             'remember_token' => Str::random(10),
             'roles' => 'admin'
         ]);
