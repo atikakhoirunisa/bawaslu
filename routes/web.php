@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 // Route::get('user/login', 'AdminController@getLogin')->name('user.login');
 // Route::post('user/login', 'AdminController@postLogin');
 
-// Route::get('/', function () {
-//     return view('layout/home');
-// });
+Route::get('/', function () {
+    if (auth()->check()) {
+        return back();
+    }
+    return redirect()->route('login');
+});
 
 // Route::get('/home', function () {
 //     return view('layout/home');
@@ -75,7 +78,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/exportkegiatan', 'KegiatanController@kegiatanexport')->name('exportkegiatan');
 
 
-    Route::get('logout', 'AuthController@logout')->name('logout');
+    Route::get('logout', 'Auth\AuthController@logout')->name('logout');
 
     Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 });
