@@ -1,3 +1,15 @@
+# Setup
+```
+git clone https://github.com/atikakhoirunisa/bawaslu.git bawaslu
+cd bawaslu
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+* after that, don't fortget to change DB_NAME at .env to your local Database.
+```
+php artisan migrate --seed
+```
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
