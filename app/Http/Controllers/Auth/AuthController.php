@@ -24,9 +24,10 @@ class AuthController extends Controller
     //form login user
     public function formLogin(Request $req)
     {
+        // dd("test");
         $credentials = $req->only('email', 'password');
         if (auth()->attempt($credentials)) {
-            return redirect()->intended('/')->with('msg', 'Login berhasil');
+            return redirect()->intended('/dashboard')->with('msg', 'Login berhasil');
         }
         return back()->withErrors([
             'email'         => 'nama tidak boleh kosong',
