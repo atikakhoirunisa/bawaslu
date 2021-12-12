@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\MonitoringModel;
 
 class MonitoringModel extends Model
 {
@@ -16,7 +15,7 @@ class MonitoringModel extends Model
      * @var array
      */
     protected $fillable = [
-        'id_monitoring','kategori_media','kategori_berita','jenis_media','nama_media','judul_berita','nama_pengawas','penanggungjawab','tanggal_penayangan','waktu_monitoring','file', 'file1', 'link'
+        'id_monitoring', 'kategori_media', 'kategori_berita', 'jenis_media', 'nama_media', 'judul_berita', 'nama_pengawas', 'penanggungjawab', 'tanggal_penayangan', 'waktu_monitoring', 'file', 'file1', 'link'
     ];
 
     // protected $primaryKey = 'id_pengawas';

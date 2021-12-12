@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
     //MONITORING
     Route::get('monitoring/add', 'MonitoringController@add');
     Route::post('monitoring/store', 'MonitoringController@store');
-    Route::get('monitoring/data', 'MonitoringController@index');
+    Route::get('monitoring/data', 'MonitoringController@index')->name('monitoring.index');
     Route::get('monitoring/edit/{id_monitoring}', 'MonitoringController@edit');
     Route::patch('monitoring/{id_monitoring}', 'MonitoringController@editProsess');
     Route::delete('monitoring/{id_monitoring}', 'MonitoringController@delete');

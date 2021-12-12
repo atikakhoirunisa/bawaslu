@@ -13,7 +13,7 @@
         </div>
         <div class="card-body card-block">
           <form action="{{ url('monitoring/'.$data_monitoring->id_monitoring) }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
-            @method('patch') 
+            @method('patch')
             @csrf
             <div class="row form-group">
               <div class="col col-md-3"><label for="kategori_media" class=" form-control-label">Kategori Media</label></div>
@@ -79,7 +79,7 @@
                 <label for="tanggal_penayangan" class=" form-control-label">Hari/Tanggal</label>
               </div>
               <div class="col-12 col-md-9">
-                <input type="date" id="tanggal_penayangan" name="tanggal_penayangan" class="form-control" value="{{ $data_monitoring->tanggal_penayangan }}"><small class="form-text text-muted">Masukkan tanggal (bb-hh-tt)</small>
+                <input type="date" id="tanggal_penayangan" name="tanggal_penayangan" class="form-control" value="{{ \Carbon\Carbon::parse($data_monitoring->tanggal_penayangan)->translatedFormat('Y-m-d') }}"><small class="form-text text-muted">Masukkan tanggal (bb-hh-tt)</small>
               </div>
             </div>
 
@@ -90,7 +90,10 @@
 
             <div class="row form-group">
               <div class="col col-md-3"><label for="file" class=" form-control-label">Upload File/Video</label></div>
-              <div class="col-12 col-md-9"><input type="file" id="file" name="file" class="form-control-file" value="{{ $data_monitoring->file }}"  required="file" multiple></div>
+              <div class="col-12 col-md-9">
+                <input type="file" id="file" name="file" class="form-control-file" value="{{ asset('upload_monitoring/') . $data_monitoring->file }}"  required="file" multiple>
+                {{ $data_monitoring->file }}
+            </div>
             </div>
 
             <div class="row form-group">
